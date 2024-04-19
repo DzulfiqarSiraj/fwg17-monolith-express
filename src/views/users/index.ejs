@@ -2,7 +2,7 @@
         <table class="table" id="list-user">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Id</th>
                 <th scope="col">Fullname</th>
                 <th scope="col">Email</th>
                 <th scope="col">Created At</th>
@@ -24,6 +24,10 @@
             <% }) %>
             </tbody>
           </table>
+          <div class="d-grid col-2 gap-2 mx-auto">
+            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#createModal">Add</button>
+          </div>
+
           <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -40,6 +44,41 @@
                 </div>
               </div>
             </div>
+          </div>
+
+            <!-- modal - create - start -->
+            <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                      <div class="modal-header bg-secondary">
+                          <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Create User</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-bs-theme="dark"></button>
+                      </div>
+                  <div class="modal-body">
+                      <form action="" class="d-flex flex-column gap-2" method="POST">
+                          <div class="container">
+                              <label for="inputFullName" class="form-label">Full Name</label>
+                              <input type="text" id="inputFullName" class="form-control" name="full_name" aria-describedby="fullNameBlock">
+                          </div>
+                          <div class="container">
+                              <label for="inputEmail" class="form-label">Email</label>
+                              <input type="email" id="inputEmail" class="form-control" name="email" aria-describedby="EmailBlock">
+                          </div>
+                          <div class="container">
+                              <label for="inputPassword" class="form-label">Password</label>
+                              <input type="password" id="inputPassword" class="form-control" name="password" aria-describedby="PasswordBlock">
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- modal - create - end -->
+
             <script>
               const table = document.getElementById("list-user")
               const confirmButton = document.getElementById("confirm-delete-button")
