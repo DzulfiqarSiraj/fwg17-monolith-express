@@ -17,6 +17,12 @@ exports.editUser = async (req, res)=>{
     return res.redirect("/users")
 }
 
+exports.createUser = async (req, res) => {
+    await userModel.createUser(req.body);
+
+    return res.redirect(`/users`)
+};
+
 exports.deleteUser = async (req, res)=>{
     const deleted = await userModel.deleteUser(req.params.id)
     return res.json({
