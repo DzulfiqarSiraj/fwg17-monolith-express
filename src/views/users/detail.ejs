@@ -8,9 +8,10 @@
     <input type="text" class="form-control" name="password" value="<%= user.password %>">
     <input type="text" class="form-control" readonly disabled value="<%= moment(user.created_at).format('DD/MM/YYYY hh:mm:ss') %>">
     <input type="text" class="form-control" readonly disabled value="<%= moment(user.updated_at).format('DD/MM/YYYY hh:mm:ss') %>">
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a href="/users"><i data-feather="arrow-left-circle"></i> Go Back</a>
+    <button type="submit" class="btn text-light" style="background-color: #003550;">Save</button>
 </form>
+
+<a href="/users" class="d-flex align-items-center gap-2 my-2" style="text-decoration: none;"><i data-feather="arrow-left-circle"></i>Go Back</a>
 
 
 
